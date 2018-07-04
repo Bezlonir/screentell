@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>screenTell</title>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <style>
+      :root {
+        font-family: 'Abril Fatface', sans-serif;
+        font-size: 16px;
+      }
+
+      .height, .width {
+        color: blue;
+        font-size: 1.2rem;
+      }
+    </style>
+    <h1>ScreenTell</h1>
+    <p>Height: <span class="height"></span></p>
+    <p>Width: <span class="width"></span></p>
+    <script>
+      var height = document.querySelector('.height');
+      var width = document.querySelector('.width');
+
+      window.addEventListener('resize', setSpans);
+
+      function setSpans() {
+        height.textContent = `${window.innerHeight}`;
+        width.textContent = `${window.innerWidth}`;
+      }
+
+      setSpans();
+    </script>
+  </body>
+</html>
